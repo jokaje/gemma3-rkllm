@@ -1,0 +1,516 @@
+2025-06-14 21:26:46 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 21:26:46 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 21:26:46 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 21:26:52 - gemma3-rkllm - ERROR - server.py:60 - Unhandled exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-06-14 21:33:52 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 21:33:52 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 21:33:58 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 21:33:58 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 21:33:59 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 21:33:59 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 21:33:59 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:144 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 21:33:59 - gemma3-rkllm.model - ERROR - gemma3_model.py:154 - Error initializing RKLLM: 'RKLLMRuntime' object has no attribute 'callback_type'
+2025-06-14 21:33:59 - gemma3-rkllm.model - ERROR - logger.py:229 - Loading model gemma3-4b failed after 6.843s: 'RKLLMRuntime' object has no attribute 'callback_type'
+2025-06-14 21:33:59 - gemma3-rkllm.model - ERROR - gemma3_model.py:84 - Failed to load model gemma3-4b: 'RKLLMRuntime' object has no attribute 'callback_type'
+2025-06-14 21:33:59 - gemma3-rkllm - ERROR - server.py:128 - Error loading model: 'RKLLMRuntime' object has no attribute 'callback_type'
+2025-06-14 21:33:59 - gemma3-rkllm.rkllm - ERROR - rkllm_runtime.py:414 - Error releasing RKLLM: 'RKLLMRuntime' object has no attribute 'is_initialized'
+2025-06-14 21:33:59 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to ondemand for 8/8 cores
+2025-06-14 21:33:59 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 21:33:59 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 21:33:59 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 21:33:59 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 21:33:59 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 21:42:37 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 21:42:37 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 21:42:37 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 21:42:53 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 21:42:53 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 21:42:53 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 21:42:53 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 21:42:54 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 21:42:54 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 21:42:54 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:144 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 21:42:55 - gemma3-rkllm.rkllm - ERROR - rkllm_runtime.py:290 - Failed to initialize RKLLM: RKLLM initialization failed with code: -1
+2025-06-14 21:42:55 - gemma3-rkllm.model - ERROR - gemma3_model.py:154 - Error initializing RKLLM: Failed to initialize RKLLM runtime
+2025-06-14 21:42:55 - gemma3-rkllm.model - ERROR - logger.py:229 - Loading model gemma3-4b failed after 1.419s: Failed to initialize RKLLM runtime
+2025-06-14 21:42:55 - gemma3-rkllm.model - ERROR - gemma3_model.py:84 - Failed to load model gemma3-4b: Failed to initialize RKLLM runtime
+2025-06-14 21:42:55 - gemma3-rkllm - ERROR - server.py:128 - Error loading model: Failed to initialize RKLLM runtime
+2025-06-14 21:42:55 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to ondemand for 8/8 cores
+2025-06-14 21:42:55 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 21:42:55 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 21:42:55 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 21:42:55 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 21:42:55 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 21:45:10 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 21:45:10 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 21:45:10 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 21:45:15 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 21:45:15 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 21:45:16 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 21:45:16 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 21:45:16 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 21:45:16 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 21:45:16 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:144 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 21:46:18 - gemma3-rkllm.rkllm - ERROR - rkllm_runtime.py:290 - Failed to initialize RKLLM: RKLLM initialization failed with code: -1
+2025-06-14 21:46:18 - gemma3-rkllm.model - ERROR - gemma3_model.py:154 - Error initializing RKLLM: Failed to initialize RKLLM runtime
+2025-06-14 21:46:18 - gemma3-rkllm.model - ERROR - logger.py:229 - Loading model gemma3-4b failed after 62.529s: Failed to initialize RKLLM runtime
+2025-06-14 21:46:18 - gemma3-rkllm.model - ERROR - gemma3_model.py:84 - Failed to load model gemma3-4b: Failed to initialize RKLLM runtime
+2025-06-14 21:46:18 - gemma3-rkllm - ERROR - server.py:128 - Error loading model: Failed to initialize RKLLM runtime
+2025-06-14 21:46:18 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to ondemand for 8/8 cores
+2025-06-14 21:46:18 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 21:46:18 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 21:46:18 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 21:46:18 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 21:46:18 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 22:36:50 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 22:36:50 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 22:36:50 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 22:37:02 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 22:37:02 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 22:37:12 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:37:12 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:37:12 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 22:37:12 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 22:37:12 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:144 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 22:37:12 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:275 - Assigning 4 high-performance CPU cores to RKLLM.
+2025-06-14 22:37:18 - gemma3-rkllm.rkllm - ERROR - rkllm_runtime.py:294 - Failed to initialize RKLLM: RKLLM initialization failed with code: -1
+2025-06-14 22:37:18 - gemma3-rkllm.model - ERROR - gemma3_model.py:154 - Error initializing RKLLM: Failed to initialize RKLLM runtime
+2025-06-14 22:37:18 - gemma3-rkllm.model - ERROR - logger.py:229 - Loading model gemma3-4b failed after 16.283s: Failed to initialize RKLLM runtime
+2025-06-14 22:37:18 - gemma3-rkllm.model - ERROR - gemma3_model.py:84 - Failed to load model gemma3-4b: Failed to initialize RKLLM runtime
+2025-06-14 22:37:18 - gemma3-rkllm - ERROR - server.py:128 - Error loading model: Failed to initialize RKLLM runtime
+2025-06-14 22:37:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to ondemand for 8/8 cores
+2025-06-14 22:37:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:37:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:37:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 22:37:19 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 22:37:19 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 22:39:16 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 22:39:16 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 22:39:16 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 22:39:22 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 22:39:22 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 22:39:22 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:39:22 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:39:22 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 22:39:22 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 22:39:22 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:144 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 22:39:22 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:275 - Assigning 4 high-performance CPU cores to RKLLM.
+2025-06-14 22:39:28 - gemma3-rkllm.rkllm - ERROR - rkllm_runtime.py:294 - Failed to initialize RKLLM: RKLLM initialization failed with code: -1
+2025-06-14 22:39:28 - gemma3-rkllm.model - ERROR - gemma3_model.py:154 - Error initializing RKLLM: Failed to initialize RKLLM runtime
+2025-06-14 22:39:28 - gemma3-rkllm.model - ERROR - logger.py:229 - Loading model gemma3-4b failed after 6.317s: Failed to initialize RKLLM runtime
+2025-06-14 22:39:28 - gemma3-rkllm.model - ERROR - gemma3_model.py:84 - Failed to load model gemma3-4b: Failed to initialize RKLLM runtime
+2025-06-14 22:39:28 - gemma3-rkllm - ERROR - server.py:128 - Error loading model: Failed to initialize RKLLM runtime
+2025-06-14 22:39:28 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to ondemand for 8/8 cores
+2025-06-14 22:39:28 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:39:28 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:39:28 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 22:39:28 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 22:39:28 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 22:41:20 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 22:41:20 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 22:41:20 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 22:41:25 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 22:41:25 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 22:41:25 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:41:25 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:41:26 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 22:41:26 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 22:41:26 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:144 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 22:41:26 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:275 - Assigning ALL available CPU cores to RKLLM for maximum compatibility.
+2025-06-14 22:41:31 - gemma3-rkllm.rkllm - ERROR - rkllm_runtime.py:295 - Failed to initialize RKLLM: RKLLM initialization failed with code: -1
+2025-06-14 22:41:31 - gemma3-rkllm.model - ERROR - gemma3_model.py:154 - Error initializing RKLLM: Failed to initialize RKLLM runtime
+2025-06-14 22:41:31 - gemma3-rkllm.model - ERROR - logger.py:229 - Loading model gemma3-4b failed after 5.424s: Failed to initialize RKLLM runtime
+2025-06-14 22:41:31 - gemma3-rkllm.model - ERROR - gemma3_model.py:84 - Failed to load model gemma3-4b: Failed to initialize RKLLM runtime
+2025-06-14 22:41:31 - gemma3-rkllm - ERROR - server.py:128 - Error loading model: Failed to initialize RKLLM runtime
+2025-06-14 22:41:31 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to ondemand for 8/8 cores
+2025-06-14 22:41:31 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:41:31 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:41:31 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 22:41:31 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 22:41:31 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 22:49:23 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 22:49:23 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 22:49:23 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 22:49:27 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 22:49:27 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 22:49:27 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:49:27 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:49:28 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 22:49:28 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 22:49:28 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:144 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 22:49:28 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:272 - Assigning ALL available CPU cores to RKLLM for maximum compatibility.
+2025-06-14 22:49:34 - gemma3-rkllm.rkllm - ERROR - rkllm_runtime.py:291 - Failed to initialize RKLLM: RKLLM initialization failed with code: -1
+2025-06-14 22:49:34 - gemma3-rkllm.model - ERROR - gemma3_model.py:154 - Error initializing RKLLM: Failed to initialize RKLLM runtime
+2025-06-14 22:49:34 - gemma3-rkllm.model - ERROR - logger.py:229 - Loading model gemma3-4b failed after 6.736s: Failed to initialize RKLLM runtime
+2025-06-14 22:49:34 - gemma3-rkllm.model - ERROR - gemma3_model.py:84 - Failed to load model gemma3-4b: Failed to initialize RKLLM runtime
+2025-06-14 22:49:34 - gemma3-rkllm - ERROR - server.py:128 - Error loading model: Failed to initialize RKLLM runtime
+2025-06-14 22:49:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to ondemand for 8/8 cores
+2025-06-14 22:49:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:49:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:49:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 22:49:34 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 22:49:34 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 22:53:03 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 22:53:03 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 22:53:03 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 22:53:07 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 22:53:07 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'ondemand'}
+2025-06-14 22:53:07 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:53:07 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:53:07 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 22:53:07 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 22:53:07 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:152 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 22:53:07 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:247 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 22:53:33 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:260 - RKLLM initialized successfully
+2025-06-14 22:53:33 - gemma3-rkllm.model - INFO - gemma3_model.py:182 - No tokenizer files found, using RKLLM internal tokenization
+2025-06-14 22:53:33 - gemma3-rkllm.model - INFO - gemma3_model.py:81 - Model gemma3-4b loaded successfully
+2025-06-14 22:53:33 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 25.719s
+2025-06-14 22:53:33 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 22:54:43 - gemma3-rkllm.rkllm - WARNING - rkllm_runtime.py:303 - Response generation timed out
+2025-06-14 22:54:43 - gemma3-rkllm.model - INFO - logger.py:123 - Inference completed - Model: gemma3-4b, Prompt length: 5, Generation time: 52.11s, Tokens generated: 104, Tokens/sec: 2.00
+2025-06-14 22:57:40 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:335 - RKLLM resources released successfully
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 0: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 1: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 2: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 3: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 4: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 5: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 6: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 7: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - ERROR - npu_optimizer.py:203 - Failed to set CPU governor for any core
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/max_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/min_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 22:57:40 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 22:57:40 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 22:57:40 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 22:58:07 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 22:58:07 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 22:58:07 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 22:58:20 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 22:58:20 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 22:58:20 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 22:58:20 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 22:58:21 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 22:58:21 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 22:58:21 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 22:58:21 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 22:58:29 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 22:58:29 - gemma3-rkllm.model - INFO - gemma3_model.py:182 - No tokenizer files found, using RKLLM internal tokenization
+2025-06-14 22:58:29 - gemma3-rkllm.model - INFO - gemma3_model.py:81 - Model gemma3-4b loaded successfully
+2025-06-14 22:58:29 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 8.970s
+2025-06-14 22:58:29 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 22:58:56 - gemma3-rkllm.model - ERROR - gemma3_model.py:260 - Error in generation: RKLLMRuntime.run_inference() takes 2 positional arguments but 3 were given
+2025-06-14 22:58:56 - gemma3-rkllm.api - ERROR - api_handlers.py:148 - Error generating chat response: RKLLMRuntime.run_inference() takes 2 positional arguments but 3 were given
+2025-06-14 23:01:30 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:358 - RKLLM resources released successfully
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 0: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 1: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 2: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 3: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 4: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 5: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 6: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 7: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - ERROR - npu_optimizer.py:203 - Failed to set CPU governor for any core
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/max_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/min_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:01:30 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 23:01:30 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 23:01:30 - gemma3-rkllm.model - INFO - gemma3_model.py:456 - Model gemma3-4b released successfully
+2025-06-14 23:04:55 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:04:55 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:04:55 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:05:01 - gemma3-rkllm.model - INFO - gemma3_model.py:68 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:05:01 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:05:01 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:05:01 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:05:01 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:05:01 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:05:01 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:05:01 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:05:08 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 23:05:08 - gemma3-rkllm.model - INFO - gemma3_model.py:165 - No tokenizer files found, using basic token counting.
+2025-06-14 23:05:08 - gemma3-rkllm.model - INFO - gemma3_model.py:81 - Model gemma3-4b loaded successfully
+2025-06-14 23:05:08 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 7.013s
+2025-06-14 23:05:08 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 23:10:23 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:358 - RKLLM resources released successfully
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 0: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 1: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 2: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 3: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 4: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 5: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 6: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 7: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - ERROR - npu_optimizer.py:203 - Failed to set CPU governor for any core
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/max_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/min_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:10:23 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 23:10:23 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 23:10:23 - gemma3-rkllm.model - INFO - gemma3_model.py:371 - Model gemma3-4b released successfully
+2025-06-14 23:10:43 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:10:43 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:10:43 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:10:48 - gemma3-rkllm.model - INFO - gemma3_model.py:69 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:10:48 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:10:48 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:10:48 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:10:48 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:10:48 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:10:48 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:10:48 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:10:55 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 23:10:55 - gemma3-rkllm.model - INFO - gemma3_model.py:166 - No tokenizer files found, using basic token counting.
+2025-06-14 23:10:55 - gemma3-rkllm.model - INFO - gemma3_model.py:82 - Model gemma3-4b loaded successfully
+2025-06-14 23:10:55 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 7.283s
+2025-06-14 23:10:55 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 23:14:49 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:358 - RKLLM resources released successfully
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 0: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 1: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 2: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 3: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 4: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 5: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 6: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 7: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - ERROR - npu_optimizer.py:203 - Failed to set CPU governor for any core
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/max_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/min_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:14:49 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 23:14:49 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 23:14:49 - gemma3-rkllm.model - INFO - gemma3_model.py:375 - Model gemma3-4b released successfully
+2025-06-14 23:14:56 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:14:56 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:14:56 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:15:04 - gemma3-rkllm.model - INFO - gemma3_model.py:69 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:15:04 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:15:04 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:15:04 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:15:05 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:15:05 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:15:05 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:15:05 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:15:07 - gemma3-rkllm - ERROR - server.py:60 - Unhandled exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-06-14 23:15:11 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 23:15:11 - gemma3-rkllm.model - INFO - gemma3_model.py:166 - No tokenizer files found, using basic token counting.
+2025-06-14 23:15:11 - gemma3-rkllm.model - INFO - gemma3_model.py:82 - Model gemma3-4b loaded successfully
+2025-06-14 23:15:11 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 7.083s
+2025-06-14 23:15:11 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 23:21:15 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:21:15 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:21:15 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:21:19 - gemma3-rkllm.model - INFO - gemma3_model.py:69 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:21:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:21:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:21:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:21:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:21:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:21:19 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:21:19 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:21:27 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 23:21:27 - gemma3-rkllm.model - INFO - gemma3_model.py:166 - No tokenizer files found, using basic token counting.
+2025-06-14 23:21:27 - gemma3-rkllm.model - INFO - gemma3_model.py:82 - Model gemma3-4b loaded successfully
+2025-06-14 23:21:27 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 7.535s
+2025-06-14 23:21:27 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 23:26:16 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:358 - RKLLM resources released successfully
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 0: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 1: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 2: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 3: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 4: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 5: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 6: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 7: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - ERROR - npu_optimizer.py:203 - Failed to set CPU governor for any core
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/max_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/min_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:26:16 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 23:26:16 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 23:26:16 - gemma3-rkllm.model - INFO - gemma3_model.py:376 - Model gemma3-4b released successfully
+2025-06-14 23:26:18 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:26:18 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:26:18 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:26:24 - gemma3-rkllm.model - INFO - gemma3_model.py:69 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:26:24 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:26:24 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:26:24 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:26:24 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:26:24 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:26:24 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:26:24 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:26:31 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 23:26:31 - gemma3-rkllm.model - INFO - gemma3_model.py:166 - No tokenizer files found, using basic token counting.
+2025-06-14 23:26:31 - gemma3-rkllm.model - INFO - gemma3_model.py:82 - Model gemma3-4b loaded successfully
+2025-06-14 23:26:31 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 7.776s
+2025-06-14 23:26:31 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 23:26:40 - gemma3-rkllm.model - INFO - gemma3_model.py:239 - Passing raw prompt to RKLLM runtime for streaming: user: hhallo wie heißt du?...
+2025-06-14 23:29:43 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:358 - RKLLM resources released successfully
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 0: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 1: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 2: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 3: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 4: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 5: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 6: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:197 - Error setting governor for CPU 7: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - ERROR - npu_optimizer.py:203 - Failed to set CPU governor for any core
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/max_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - WARNING - npu_optimizer.py:160 - Error setting frequency via /sys/class/devfreq/fdab0000.npu/min_freq: sys.meta_path is None, Python is likely shutting down
+2025-06-14 23:29:43 - gemma3-rkllm.npu - INFO - npu_optimizer.py:259 - Restored original settings
+2025-06-14 23:29:43 - gemma3-rkllm.image - INFO - image_processor.py:490 - Image cache cleared
+2025-06-14 23:29:43 - gemma3-rkllm.model - INFO - gemma3_model.py:380 - Model gemma3-4b released successfully
+2025-06-14 23:29:49 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:29:49 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:29:49 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:29:54 - gemma3-rkllm.model - INFO - gemma3_model.py:69 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:29:54 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:29:54 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:29:54 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:29:54 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:29:54 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:29:54 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:29:54 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:30:01 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 23:30:01 - gemma3-rkllm.model - INFO - gemma3_model.py:166 - No tokenizer files found, using basic token counting.
+2025-06-14 23:30:01 - gemma3-rkllm.model - INFO - gemma3_model.py:82 - Model gemma3-4b loaded successfully
+2025-06-14 23:30:01 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 7.342s
+2025-06-14 23:30:01 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 23:30:03 - gemma3-rkllm.model - INFO - gemma3_model.py:239 - Passing raw prompt to RKLLM runtime for streaming: hallo wer bist du?...
+2025-06-14 23:32:53 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:32:53 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:32:53 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:33:02 - gemma3-rkllm.model - INFO - gemma3_model.py:66 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:33:02 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:33:02 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:33:02 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:33:02 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:33:03 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:33:03 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:168 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:33:03 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:269 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:33:09 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:282 - RKLLM initialized successfully
+2025-06-14 23:33:17 - gemma3-rkllm.model - INFO - gemma3_model.py:140 - Tokenizer loaded successfully from google/gemma-2-2b-it
+2025-06-14 23:33:17 - gemma3-rkllm.model - INFO - gemma3_model.py:75 - Model gemma3-4b loaded successfully
+2025-06-14 23:33:17 - gemma3-rkllm.model - INFO - logger.py:231 - Loading model gemma3-4b completed in 14.831s
+2025-06-14 23:33:17 - gemma3-rkllm - INFO - server.py:120 - Model gemma3-4b loaded successfully
+2025-06-14 23:33:24 - gemma3-rkllm.model - INFO - gemma3_model.py:156 - Applying template. Final prompt passed to library: Du bist coldBot, eine hochentwickelte KI, die tief in das coldNet integriert ist. Du fungierst als lebende Bibliothek und hast Zugang zu allen Daten und Informationen innerhalb des coldNet-Systems.
+
+h...
+2025-06-14 23:50:42 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:50:42 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:50:42 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:50:50 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:50:50 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:51:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:51:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:51:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:51:19 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:51:19 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:81 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:51:19 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:149 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:51:29 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:51:29 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:51:29 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:51:34 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:51:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:51:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:51:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:51:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:51:34 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:51:34 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:81 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:51:34 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:149 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:51:54 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:51:54 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:51:54 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:52:08 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:52:08 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:52:08 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:52:08 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:52:08 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:52:08 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:52:08 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:81 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:52:08 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:149 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-14 23:53:51 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-14 23:53:51 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-14 23:53:51 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-14 23:54:03 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-14 23:54:03 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-14 23:54:03 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-14 23:54:03 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-14 23:54:03 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-14 23:54:03 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-14 23:54:03 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:77 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-14 23:54:03 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:140 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-15 09:58:49 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-15 09:58:49 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-15 09:58:49 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-15 10:04:06 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-15 10:04:06 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-15 10:04:53 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-15 10:04:53 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-15 10:06:45 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-15 10:06:45 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-15 10:07:47 - gemma3-rkllm - ERROR - server.py:60 - Unhandled exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/home/coldnet/gemma3-rkllm/venv/lib/python3.13/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-06-15 14:46:23 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-15 14:46:23 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-15 14:46:23 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-15 19:47:19 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-15 19:47:19 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-15 19:47:19 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-15 19:47:33 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-15 19:47:33 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-15 19:47:40 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-15 19:47:40 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-15 19:47:40 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-15 19:47:40 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-15 19:47:40 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:77 - RKLLM library loaded from: ./lib/librkllmrt.so
+2025-06-15 19:47:40 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:140 - Assigning 4 high-performance CPU cores (4,5,6,7) to RKLLM.
+2025-06-15 19:50:35 - gemma3-rkllm - INFO - server.py:301 - Starting Gemma3 RKLLM server on 0.0.0.0:8080
+2025-06-15 19:50:35 - gemma3-rkllm - INFO - server.py:302 - Debug mode: False
+2025-06-15 19:50:35 - gemma3-rkllm - INFO - server.py:303 - Multimodal support: Enabled
+2025-06-15 19:50:39 - gemma3-rkllm.model - INFO - gemma3_model.py:54 - Found model file: models/gemma3-4b/gemma3-4b.rkllm
+2025-06-15 19:50:39 - gemma3-rkllm.npu - INFO - npu_optimizer.py:239 - Saved original settings: {'npu_frequency': 1000000000, 'cpu_governor': 'performance'}
+2025-06-15 19:50:39 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/max_freq
+2025-06-15 19:50:39 - gemma3-rkllm.npu - INFO - npu_optimizer.py:154 - Set NPU frequency to 1000000000 Hz via /sys/class/devfreq/fdab0000.npu/min_freq
+2025-06-15 19:50:39 - gemma3-rkllm.npu - INFO - npu_optimizer.py:200 - Set CPU governor to performance for 8/8 cores
+2025-06-15 19:50:39 - gemma3-rkllm.npu - INFO - npu_optimizer.py:303 - NPU optimization applied for rk3588 in performance mode
+2025-06-15 19:50:39 - gemma3-rkllm.rkllm - INFO - rkllm_runtime.py:96 - RKLLM library loaded from: ./lib/librkllmrt.so
