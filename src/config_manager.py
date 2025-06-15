@@ -18,7 +18,8 @@ class ConfigManager:
     
     def load_config(self, config_path: Optional[str] = None) -> configparser.ConfigParser:
         """
-        Load configuration from file with fallback to defaults
+        Load configuration from file with fallback to defaults.
+        This method is idempotent and creates a new config object on each call.
         
         Args:
             config_path: Path to configuration file
@@ -26,10 +27,13 @@ class ConfigManager:
         Returns:
             ConfigParser instance
         """
+        # Create a new, clean config object for each load to prevent duplication errors.
+        self.config = configparser.ConfigParser()
+
         # Default configuration
         self._set_defaults()
         
-        # Load from file if provided
+        # Load from file if provided, this will merge/override defaults
         if config_path and os.path.exists(config_path):
             try:
                 self.config.read(config_path)
@@ -37,7 +41,7 @@ class ConfigManager:
             except Exception as e:
                 print(f"Warning: Could not load config from {config_path}: {e}")
         
-        # Load from environment variables
+        # Load from environment variables, this will override file/defaults
         self._load_from_env()
         
         self.config_loaded = True
@@ -196,4 +200,3 @@ class ConfigManager:
         for section in self.config.sections():
             config_dict[section] = dict(self.config.items(section))
         return config_dict
-

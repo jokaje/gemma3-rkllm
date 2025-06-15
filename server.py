@@ -33,12 +33,16 @@ from src.logger import setup_logger
 from src.api_handlers import APIHandlers
 from src.utils import validate_request, handle_errors
 
-# Initialize configuration
+# --- Globale Initialisierung ---
+# Globale Variablen, die von den Flask-Routen verwendet werden.
+# Sie werden in der main-Funktion korrekt initialisiert/aktualisiert.
 config_manager = ConfigManager()
 config = config_manager.load_config()
-
-# Setup logging
 logger = setup_logger(config)
+current_model: Optional[Gemma3Model] = None
+image_processor = ImageProcessor(config)
+api_handlers = APIHandlers(config)
+
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -47,10 +51,8 @@ app = Flask(__name__)
 if config.getboolean('server', 'cors_enabled', fallback=True):
     CORS(app, origins=config.get('security', 'allowed_origins', fallback='*'))
 
-# Global variables
-current_model: Optional[Gemma3Model] = None
-image_processor = ImageProcessor(config)
-api_handlers = APIHandlers(config)
+
+# --- API Routen ---
 
 @app.errorhandler(Exception)
 def handle_exception(e):
@@ -227,13 +229,10 @@ def upload_image():
         image_data = file.read()
         processed_image = image_processor.process_image_bytes(image_data)
         
-        # Convert to base64 for response
-        img_base64 = base64.b64encode(image_data).decode('utf-8')
-        
         return jsonify({
             "message": "Image processed successfully",
             "image_id": processed_image.get('id'),
-            "size": processed_image.get('size'),
+            "size": processed_image.get('original_size'),
             "format": processed_image.get('format')
         })
         
@@ -267,36 +266,43 @@ def get_config():
         logger.error(f"Error getting config: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+# --- Hauptfunktion zum Starten des Servers ---
+
 @click.command()
 @click.option('--host', default=None, help='Host to bind to')
 @click.option('--port', default=None, type=int, help='Port to bind to')
 @click.option('--debug', is_flag=True, help='Enable debug mode')
-@click.option('--config', default='config/default.ini', help='Configuration file path')
-def main(host, port, debug, config_file):
+@click.option('--config', 'config_path', default='config/default.ini', help='Configuration file path')
+def main(host, port, debug, config_path):
     """Start the Gemma3 RKLLM server"""
+    global config, logger, image_processor, api_handlers
     
-    # Load configuration
-    global config
-    config = config_manager.load_config(config_file)
+    # Lade Konfiguration aus der angegebenen Datei und aktualisiere das globale Objekt
+    config = config_manager.load_config(config_path)
+
+    # Initialisiere Logger und andere Komponenten mit der neuen Konfiguration neu
+    logger = setup_logger(config)
+    image_processor = ImageProcessor(config)
+    api_handlers = APIHandlers(config)
     
-    # Override with command line arguments
+    # Überschreibe Konfiguration mit Kommandozeilenargumenten
     if host:
         config.set('server', 'host', host)
     if port:
         config.set('server', 'port', str(port))
-    if debug:
-        config.set('server', 'debug', 'true')
-    
-    # Get final configuration
+
+    # Kommandozeilen-Flag für Debug-Modus hat Vorrang vor der Konfigurationsdatei
+    final_debug = debug or config.getboolean('server', 'debug', fallback=False)
+
+    # Lese endgültige Konfigurationswerte
     final_host = config.get('server', 'host', fallback='0.0.0.0')
     final_port = config.getint('server', 'port', fallback=8080)
-    final_debug = config.getboolean('server', 'debug', fallback=False)
     
     logger.info(f"Starting Gemma3 RKLLM server on {final_host}:{final_port}")
     logger.info(f"Debug mode: {final_debug}")
     logger.info(f"Multimodal support: Enabled")
     
-    # Start Flask app
+    # Starte die Flask-Anwendung
     app.run(
         host=final_host,
         port=final_port,
@@ -306,4 +312,3 @@ def main(host, port, debug, config_file):
 
 if __name__ == '__main__':
     main()
-
