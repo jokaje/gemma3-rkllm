@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Simple client for Gemma3 RKLLM server
+Conversational client for Gemma3 RKLLM server
+Manages chat history to provide context and memory.
 """
 
 import requests
@@ -10,87 +11,97 @@ import argparse
 import base64
 from pathlib import Path
 
-def send_text_request(url, prompt, model="gemma3", stream=False):
-    """Send text-only request"""
+# Globale Variable für die Konversationshistorie
+conversation_history = []
+
+def send_chat_request(url, model="gemma3-4b-2", stream=True):
+    """
+    Sendet eine Chat-Anfrage mit der gesamten Konversationshistorie.
+    """
+    global conversation_history
+    
     data = {
         "model": model,
-        "prompt": prompt,
-        "stream": stream
+        "messages": conversation_history,
+        "stream": stream,
+        "options": {
+            "temperature": 0.7
+        }
     }
     
     try:
-        response = requests.post(f"{url}/api/generate", json=data, stream=stream)
+        response = requests.post(f"{url}/api/chat", json=data, stream=stream)
         response.raise_for_status()
         
+        full_response = ""
         if stream:
             for line in response.iter_lines():
                 if line:
                     try:
-                        result = json.loads(line)
-                        if not result.get("done", False):
-                            print(result.get("response", ""), end="", flush=True)
+                        # Jede Zeile ist ein separates JSON-Objekt
+                        chunk = json.loads(line.decode('utf-8'))
+                        
+                        # Non-Streaming-Fehler abfangen
+                        if "error" in chunk:
+                            print(f"\n[Server-Fehler: {chunk['error']}]")
+                            return
+
+                        # Streaming-Logik
+                        if not chunk.get("done"):
+                            content = chunk.get("message", {}).get("content", "")
+                            print(content, end="", flush=True)
+                            full_response += content
                     except json.JSONDecodeError:
+                        print(f"\n[Warnung: Konnte eine Zeile nicht dekodieren: {line}]")
                         continue
-            print()  # New line at end
+            print() # Für einen Zeilenumbruch am Ende der gestreamten Antwort
         else:
             result = response.json()
-            print(result.get("response", ""))
-            
-    except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
-        sys.exit(1)
+            full_response = result.get("message", {}).get("content", "")
+            print(full_response)
 
-def send_multimodal_request(url, prompt, image_path, model="gemma3"):
-    """Send multimodal request with image"""
-    try:
-        # Read and encode image
-        with open(image_path, "rb") as f:
-            image_data = base64.b64encode(f.read()).decode()
-        
-        data = {
-            "model": model,
-            "prompt": prompt,
-            "images": [f"data:image/jpeg;base64,{image_data}"]
-        }
-        
-        response = requests.post(f"{url}/generate", json=data)
-        response.raise_for_status()
-        result = response.json()
-        print(result.get("text", ""))
-        
+        # Füge die Antwort des Assistenten zur Historie hinzu, um das "Gedächtnis" zu wahren
+        if full_response:
+            conversation_history.append({"role": "assistant", "content": full_response})
+
     except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-    except FileNotFoundError:
-        print(f"Error: Image file not found: {image_path}")
-        sys.exit(1)
+        print(f"\n[Fehler bei der Anfrage: {e}]")
+        # Bei einem Fehler die letzte Benutzer-Nachricht entfernen, um Wiederholungen zu vermeiden
+        if conversation_history and conversation_history[-1]["role"] == "user":
+            conversation_history.pop()
 
 def main():
-    parser = argparse.ArgumentParser(description="Gemma3 RKLLM Client")
+    parser = argparse.ArgumentParser(description="Gemma3 RKLLM Conversational Client")
     parser.add_argument("--url", default="http://localhost:8080", help="Server URL")
-    parser.add_argument("--model", default="gemma3", help="Model name")
-    parser.add_argument("--prompt", required=True, help="Text prompt")
-    parser.add_argument("--image", help="Path to image file")
-    parser.add_argument("--stream", action="store_true", help="Enable streaming")
+    parser.add_argument("--model", default="gemma3-4b-2", help="Model name as defined on the server")
     
     args = parser.parse_args()
     
-    try:
-        if args.image:
-            if not Path(args.image).exists():
-                print(f"Error: Image file not found: {args.image}")
-                sys.exit(1)
-            send_multimodal_request(args.url, args.prompt, args.image, args.model)
-        else:
-            send_text_request(args.url, args.prompt, args.model, args.stream)
-    except requests.exceptions.ConnectionError:
-        print(f"Error: Could not connect to server at {args.url}")
-        print("Make sure the server is running with: ./start.sh")
-        sys.exit(1)
-    except Exception as e:
-        print(f"Error: {e}")
-        sys.exit(1)
+    print("Starte Konversation. Gib 'exit' oder 'quit' ein, um den Client zu beenden.")
+    
+    while True:
+        try:
+            prompt = input("Du: ")
+            if prompt.lower() in ["exit", "quit"]:
+                print("Beende Client...")
+                break
+            
+            # Füge die neue Benutzernachricht zur Historie hinzu
+            conversation_history.append({"role": "user", "content": prompt})
+            
+            # Sende die gesamte Historie an den Server
+            print("AI: ", end="", flush=True)
+            send_chat_request(args.url, args.model)
+            
+        except KeyboardInterrupt:
+            print("\nBeende Client...")
+            break
+        except requests.exceptions.ConnectionError:
+            print(f"\n[Fehler: Verbindung zum Server unter {args.url} fehlgeschlagen. Läuft der Server?]")
+            sys.exit(1)
+        except Exception as e:
+            print(f"\n[Ein unerwarteter Fehler ist aufgetreten: {e}]")
+            break
 
 if __name__ == "__main__":
     main()
-
