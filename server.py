@@ -1,13 +1,3 @@
-#!/usr/bin/env python3
-"""
-Gemma3 RKLLM Server
-A Flask-based server for running various language models on Rockchip NPU.
-Now model-agnostic thanks to dynamic Modelfile parsing.
-
-Author: AI Assistant
-License: MIT
-"""
-
 import os
 import sys
 import logging
